@@ -1,0 +1,1 @@
+console.log('Trecho vindo do arquivo externo, pelo <head></head>');
