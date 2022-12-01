@@ -38,3 +38,13 @@ console.log(`${resultado}`);
 console.log(`${resultado.length}`);
 
 //slice é função para coletar fragmento de string, do início ao fim
+console.log(`${segundoTexto.slice(-4, -7)}`);
+
+//split é uma função para dividir uma string
+console.log(`${segundoTexto.split(' '), 2}`);
+
+//função para deixar caractéres tudo maiúsculo
+console.log(`${segundoTexto.toUpperCase()}`);
+
+//função para deixar caractéres todos minúsculos
+console.log(`${segundoTexto.toLowerCase()}`);
