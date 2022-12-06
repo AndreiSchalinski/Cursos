@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+    <link rel="stylesheet" href="../estyle.css">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="app">
+        <p>Título do curso: {{titulo}}</p>
+        <p>Mensagem do Instrutor: {{saudarVisitantes()}}</p>
+    </div>
+
+    <script>
+        new Vue({
+            el: '#app',
+            data: {
+                nome:'Carlos da Silva',
+                titulo: 'Curso de Vue js básico ao Avançado.',
+                mensagem:'Quero agradecer a todos pela preferência.'
+            },
+            methods: {
+                saudarVisitantes() {
+                    return `Tudo bem? Me chamo ${this.nome} e digo o seguinte: ${this.mensagem}`
+                }
+            }
+        })
+    </script>
+</body>
+
+</html>

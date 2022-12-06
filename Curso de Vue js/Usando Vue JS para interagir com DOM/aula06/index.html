@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../estyle.css">
+    <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+    <title>Aula 06</title>
+</head>
+
+<body>
+
+    <div id="app">
+        <!--a diretiva v-once permite fazer o vue resolver o valor de titulo somente uma vez, sem precisar alterar novamente.-->
+        <p v-once>Título do curso: {{titulo}}</p>
+        <p>Novo título: {{alteraTitulo()}}</p>
+        <p><a v-bind:href="linkCurso" target="_blank">Acesse o curso</a></p>
+    </div>
+
+    <script>
+        new Vue({
+            el: '#app',
+            data: {
+                nomeProfessor: 'Emanuelly',
+                titulo: 'Bem vindo ao curso!',
+                linkCurso: 'https://v2.vuejs.org/v2/guide/'
+            },
+            methods: {
+                alteraTitulo: function () {
+                    this.titulo = `Eu ${this.nomeProfessor} desejo as boas vindas ao curso de Vue js do básico ao avançado.`
+                    return this.titulo
+                }
+            }
+        })
+    </script>
+
+</body>
+
+</html>
