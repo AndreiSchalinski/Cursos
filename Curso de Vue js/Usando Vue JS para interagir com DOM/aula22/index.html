@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../estyle.css">
+    <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+    <style>
+        .caixas {
+            display: flex;
+            justify-content: space-around;
+
+        }
+
+        .demo {
+            width: 100px;
+            height: 100px;
+            background-color: gray;
+            box-shadow: 5px 5px 5px rgba(255, 255, 255, 0.623);
+        }
+
+        .c1 {
+            background-color: red;
+        }
+
+        .c2 {
+            background-color: green;
+        }
+
+        .c3 {
+            background-color: blue;
+        }
+
+        .girar {
+            transform: rotate(45deg);
+        }
+    </style>
+    <title>Aula 22</title>
+</head>
+
+<body>
+
+    <div id="app">
+
+        <div class="caixas">
+            <div class="demo" :style="{'background': cor}"></div>
+            <div class="demo" :style="meuEstilo"></div>
+            <div class="demo"></div>
+        </div>
+        <hr>
+        <input type="text" v-model="cor">
+        <input type="text" v-model="largura">
+        <input type="text" v-model="altura">
+        <input type="text" v-model="rotacao">
+    </div>
+
+    <script>
+        new Vue({
+            el: `#app`,
+            data: {
+                cor: `red`,
+                largura: 100,
+                altura: 100,
+                rotacao: 0
+            },
+            computed: {
+                meuEstilo() {
+                    return {
+                        background: this.cor,
+                        width: `${this.largura}px`,
+                        height: `${this.altura}px`,
+                        transform: `rotate(${this.rotacao}deg)`
+                    }
+                }
+            }
+        })
+    </script>
+</body>
+
+</html>

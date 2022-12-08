@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../estyle.css">
+    <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+    <title>Aula 12</title>
+</head>
+
+<body>
+
+    <div id="app">
+        <p>Contador: {{contador}}</p>
+        <button v-on:click="somarContador()">SOMAR 1</button>
+        <hr>
+        <p v-on:mousemove="atualizaCoordenadas($event)">
+            Coordenadas de Mouse - X:{{x}} | Y:{{y}}
+            <!--função que para disparo de evento sobre esta região-->
+            <span v-on:mousemove="pararAtualizacaoMouse($event)">AQUI NÃO ATUALIZA COORDENADA</span>
+            <!--de outra forma, função que para disparo de evento sobre esta região-->
+            <span v-on:mousemove.stop="">AQUI NÃO ATUALIZA COORDENADA</span>
+        </p>
+    </div>
+
+    <script>
+        new Vue({
+            el: `#app`,
+            data: {
+                contador: 0,
+                x: 0,
+                y: 0
+            },
+            methods: {
+                somarContador() {
+                    this.contador++
+                },
+                atualizaCoordenadas: function (event){
+                    this.x = event.clientX
+                    this.y = event.clientY
+                },
+                pararAtualizacaoMouse: function (event) {
+                    event.stopPropagation()
+                }
+            }
+        })
+    </script>
+
+</body>
+
+</html>

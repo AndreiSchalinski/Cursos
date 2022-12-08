@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../estyle.css">
+    <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+    <title>Document</title>
+</head>
+
+<body>
+
+    <div id="app">
+        <p>Contador: {{contador}}</p>
+        <!--é possível fazer expressões também dentro das chaves-->
+        <p>Mulstiplacação por 2: {{contador * 2}}</p>
+        <!--é possível fazer expressões também dentro das chaves-->
+        <p>Validação de contador: {{contador > 10? 'Contador Maior que Dez.':'Contador Menor que Dez.'}}</p>
+        <button v-on:click="somar">SOMAR 1</button>
+        <button v-on:click="subtrair">SUBTRAIR 1</button>
+    </div>
+
+    <script>
+        new Vue({
+            el: `#app`,
+            data: {
+                contador: 0
+            },
+            methods: {
+                somar: function () {
+                    this.contador++
+                },
+                subtrair: function () {
+                    this.contador--
+                }
+            }
+        })
+    </script>
+
+</body>
+
+</html>

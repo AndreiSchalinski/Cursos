@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../estyle.css">
+    <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+    <style>
+        #app {
+            display: flex;
+            justify-content: space-around;
+
+        }
+
+        .demo {
+            width: 100px;
+            height: 100px;
+            background-color: gray;
+        }
+
+        .c1{
+            background-color: red;
+        }
+
+        .c2{
+            background-color: green;
+        }
+        .c3{
+            background-color: blue;
+        }
+    </style>
+    <title>Aula 19</title>
+</head>
+
+<body>
+
+    <div id="app">
+        <div class="demo" :class="{c1: aplicacaoC1}" @click="aplicacaoC1 = !aplicacaoC1"></div>
+        <div class="demo"></div>
+        <div class="demo"></div>
+    </div>
+
+    <script>
+        new Vue({
+            el: `#app`,
+            data:{
+                aplicacaoC1:false
+            }
+        })
+    </script>
+
+</body>
+
+</html>
