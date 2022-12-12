@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <title>Aula 06</title>
+</head>
+
+<body>
+
+    <div id="app">
+        <ul><!-- v-for para fazer um for e exibir o indice da lista de dados-->
+            <li v-for="(cor, i) in cores">{{i+1}}) - {{cor}} - índice: {{i}}</li>
+        </ul>
+    </div>
+
+    <script>
+        new Vue({
+            el: `#app`,
+            data: {
+                cores: [`vermelho`, `azul`, `verde`, `amarelo`],
+                listaTelefones: [{ nome: `Andrei`, numero: `(47)99999-9999` }, { nome: `Emanuelly`, numero: `(47)99999-9999` }, { nome: `Andrei`, numero: `(47)99999-9999` }]
+            }
+        })
+    </script>
+
+</body>
+
+</html>
