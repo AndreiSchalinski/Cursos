@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+    <title>Aula 08</title>
+</head>
+<body>
+
+    <div id="app">
+        <comp>
+
+        </comp>
+    </di>
+
+    <script>
+
+
+        Vue.component(`comp` ,{
+            template:`<h1>Componete dois dentro de outro componente</h1>`
+        })
+
+        const vm = new Vue({
+            el:`#app`,
+            template:`
+            <div>
+                <h1>{{aula}}</h1>
+                <h1>{{modulo}}</h1>
+                    <button @click="alterarAula">Alterar Aula</button>
+                    <button @click="alterarModulo">Alterar Módulop</button>
+            </div>
+            `,
+            data:{
+                aula:`Aula: Montando Instância Vue`,
+                modulo:`Módulo: Instância Vue`
+            },
+            methods:{
+                alterarAula:function(){
+                    this.aula += ` #`
+                },
+                alterarModulo:function(){
+                    this.modulo += ` #`
+                }
+            }
+        })
+
+    </script>
+    
+</body>
+</html>
