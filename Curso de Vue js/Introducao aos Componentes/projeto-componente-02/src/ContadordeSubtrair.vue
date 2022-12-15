@@ -2,7 +2,7 @@
   <div class="contador-de-subtracao">
     <h1>Contador de Subtração</h1>
     <p>Contador do arquivo Subtração: {{contadorSubtracao}}</p>
-    <button @click="subtrair()">-</button>
+    <button class="btn" @click="subtrair()">-</button>
   </div>
 </template>
 

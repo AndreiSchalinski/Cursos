@@ -4,7 +4,7 @@
     <br />
     <br />
     <p>Contador de Soma: {{ contadorSoma }}</p>
-    <button @click="adicionar()">+</button>
+    <button class="btn" @click="adicionar()">+</button>
     <hr>
   </div>
 </template>

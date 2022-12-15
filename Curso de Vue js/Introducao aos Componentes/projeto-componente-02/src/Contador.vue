@@ -5,8 +5,8 @@
     <br />
     <p>Contado feito no arquivo App</p>
     <p>Contador: {{ contador }}</p>
-    <button @click="adicionar()">+</button>
-    <button @click="subtrair()">-</button>
+    <button class="btn" @click="adicionar()">+</button>
+    <button class="btn" @click="subtrair()">-</button>
     <hr />
   </div>
 </template>
@@ -30,12 +30,12 @@ export default {
 };
 </script>
 
-<style>
+<style scoped>
 #app {
   font-family: Arial, Helvetica, sans-serif;
 }
 
-button {
+.btn {
   width: 30px;
   height: 30px;
   margin-left: 10px;
