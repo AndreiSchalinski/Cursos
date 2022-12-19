@@ -19,10 +19,10 @@ new Vue({
                 this.logs = []
         },
         atacar() {
-            this.pontuacaoJogador = this.pontuacaoJogador - 20
-            this.registraLog(`JOGADOR ATINGIU MONSTRO COM ${20}`, 'player')
-            this.pontuacaoMonstro = this.pontuacaoMonstro - 10
-            this.registraLog(`JOGADOR ATINGIU MONSTRO COM ${10}`, 'monster')
+            this.pontuacaoJogador = this.pontuacaoJogador - Math.floor(Math.random(7,12) * 10)
+            this.registraLog(`JOGADOR ATINGIU MONSTRO COM ${this.pontuacaoJogador}`, 'player')
+            this.pontuacaoMonstro = this.pontuacaoMonstro - Math.floor(Math.random(7,12) * 10)
+            this.registraLog(`JOGADOR ATINGIU MONSTRO COM ${this.pontuacaoMonstro}`, 'monster')
         },
         ataqueEspecial() {
             this.pontuacaoJogador = this.pontuacaoJogador - 40
