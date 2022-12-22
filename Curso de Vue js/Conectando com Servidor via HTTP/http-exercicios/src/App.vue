@@ -80,6 +80,10 @@ export default {
 
 	excluir(id){
 		this.$http.delete(`/usuarios/${id}.json`).then(_ => {this.obterUsuarios()}).catch(_ => {this.mensagens.push({texto:'Erro ao excluir usuário',tipo:'danger'})})
+		this.id = null
+		this.usuario.nome = ""
+	  	this.usuario.email = ""
+		this.mensagens = ""
 	},
 
     salvar() {
@@ -95,6 +99,7 @@ export default {
 				tipo:'success'
 			})
 
+			this.id = ''
 			this.usuario.nome = ''
 			this.usuario.email = ''
 
